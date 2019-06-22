@@ -1,0 +1,282 @@
+.shopping-bag {
+  margin: 100px 50px 50px 50px;
+
+  @include mq (0, 768px) {
+    margin: 0;
+  }
+  
+    &__title {
+        @include head-title;
+        display: inline-block;
+    }
+
+    p {
+        @include paragraph;
+        @include center;
+        font-style: italic;
+        margin-bottom: 60px;
+    }
+    
+    &__content {
+        max-width: 1180px;
+        margin: 0 auto;
+
+        .table {
+            max-width:1180px;
+            margin:0 auto;
+            padding-bottom: 75px;
+            position: relative;
+
+            @include mq (0, 512px) {
+              padding-bottom: 0px;
+            }
+
+            &:before{
+              content: url('../images/bag-main-figure.png');
+              display: block;
+              position: absolute;
+              width: 100px;
+              height: auto;
+              top: -95px;
+              right: -25px;
+
+              @include mq (0, 768px) {
+                display: none;
+              }
+              
+            }
+
+            .row {
+              padding:20px;
+              border-bottom:1px solid rgba($semi-dark-color-2, .4);
+              font-size:0px;
+              line-height:50px;
+
+              @include mq (0, 768px) {
+                padding:10px;
+              }
+
+              &:last-child {
+                background: rgba($semi-dark-color-2, .1);
+                margin-top:5px;
+                line-height:20px;
+                border: none;
+              }
+
+              @include mq (0, 768px) {
+                padding-bottom:10px;
+              }
+
+              .product {
+                img {
+                  width: 80px;
+                  height: auto;
+                  vertical-align: middle;
+                  padding: 5px;
+                  border:1px solid rgba($semi-dark-color-2, .4);
+                  @include mq (0, 768px) {
+                    width: 60px;
+                  }
+                }
+              }
+
+              p {
+                  text-align:left;
+                  font-style: normal;
+                  margin-bottom: 10px;
+                  text-transform: uppercase;
+                  font-weight: bold;
+              }
+
+              small {
+                font-style: italic;
+                font-size: 14px;
+              }
+
+              .price {
+                font-size: 14px;
+                font-family: $secondary-font;
+              }
+
+              &.header {
+                font-family: $secondary-font;
+                line-height:normal;
+                text-transform:uppercase;
+                font-weight:600;
+                background: rgba($semi-dark-color-2, .1);
+
+                div {
+                  font-size: 14px;
+
+                  &:not(:first-child){
+                    @include mq (0, 768px) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              div {
+                display:inline-block;
+                font-size:12px;
+                vertical-align:middle;
+
+                &:nth-of-type(1){
+                  width:15%;
+                  @include mq (0, 768px) {
+                    width:20%;
+                  }
+                  @include mq (0, 360px) {
+                    width:25%;
+                  }
+                }
+                &:nth-of-type(2){
+                  width:30%;
+                  line-height:normal;
+                  
+                  @include mq (0, 768px) {
+                    width:40%;
+                  }
+                }
+                &:nth-of-type(3){
+                  width:13%;
+                  @include mq (0, 768px) {
+                    width:35%;
+                    text-align: right;
+                  }
+                  @include mq (0, 360px) {
+                    width:35%;
+                  }
+                }
+                &:nth-of-type(4){
+                  width:13%;
+                  @include mq (0, 768px) {
+                    width:75%;
+                  }
+
+                  @include mq (0, 360px) {
+                    width:70%;
+                  }
+                }
+                &:nth-of-type(5){
+                  width:15%;
+                  @include mq (0, 768px) {
+                    width:20%;
+                    text-align: right;
+                  }
+
+                  @include mq (0, 360px) {
+                    width:30%;
+                  }
+
+                }
+                &:nth-of-type(6){
+                  width:14%;
+                  @include center;
+                  @include mq (0, 768px) {
+                    width:100%;
+                    height: 40px;
+                  }
+                }
+
+                a {
+                  cursor: pointer;
+                  text-decoration: none;
+                  display: inline-block;
+
+                  i {
+                    color: $tertiary-color;
+                    font-size: 20px;
+                    vertical-align: middle;
+
+                    @include mq (0, 768px) {
+                      display: none;
+                    }
+                  }
+
+                  .delete-item {
+                    display:none;
+
+                    @include mq (0, 768px) {
+                      display: inline-block;
+                      @include center;
+                      color: $tertiary-color;
+                      font-size: 16px;
+                      font-family: $secondary-font;
+                      text-transform: uppercase;
+                      line-height: 35px;
+                    }
+                  }
+                  &:hover i,
+                  &:hover .delete-item{
+                    color: $primary-color;
+                  }
+                }
+              }
+            }
+
+            .price_total {
+              font-family: $primary-font;
+              display: block;
+              @include mq (0, 768px) {
+                word-spacing: 10px;
+                text-align: right;
+                padding-right: 55px;
+              }
+
+              div {
+                text-align: right;
+                font-size: 14px;
+                  @include mq (0, 768px) {
+                    display: inline;
+                  }
+
+                &:nth-of-type(1) {
+                  width: 66%;
+                  @include mq (0, 768px) {
+                    width:100%;
+                  }
+                }
+  
+                &:nth-of-type(2) {
+                  width: 10%;
+                  color: $tertiary-color;
+                  @include mq (0, 768px) {
+                    width:100%;
+                  }
+                }
+              }
+            }
+          }
+          &--buttons {
+            @include clearfix;
+
+            @include mq (0, 768px) {
+              margin: 20px;
+            }
+
+            @include mq (0, 512px) {
+              display: grid;
+              text-align: center;
+            }
+
+            .btn:first-of-type{
+              float: right;
+              @include mq (0, 512px) {
+                float: none;
+                margin-bottom:10px;
+              }
+            }
+
+            .btn:last-of-type{
+              float: left;
+              @include mq (0, 512px) {
+                float: none;
+              }
+            }
+           
+
+         
+          }
+        
+  }
+}

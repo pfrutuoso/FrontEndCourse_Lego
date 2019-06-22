@@ -1,0 +1,172 @@
+.cat {
+
+    @include mq (0, 768px){
+      margin: 0px;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+        @include head-title;
+        display: inline-block;
+
+        &:not(:first-child){
+            margin-top: 80px;
+
+            @include mq (0, 768px){
+              margin-top: 20px;
+            }
+        }
+    }
+
+    p {
+      @include paragraph;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 60px;
+    }
+
+    &__filter {
+      text-align: center;
+
+      @include mq (0, 768px){
+        display: grid;
+        margin: 0 20px;
+      }
+
+      div {
+        display: inline-block;
+        &:not(:last-child){
+          margin-right: 20px;
+
+          @include mq (0, 768px){
+            margin-right: 0px;
+          }
+
+
+        }
+      }
+    }
+
+    &__more {
+      @include center;
+      font-size: 20px;
+      margin-top: 10px;
+
+      a{
+        color:$tertiary-color;
+        text-decoration: underline;
+
+        &:hover{
+          text-decoration: none;
+        }
+
+        i {
+          -webkit-transition: color 2s ease-out;
+          -moz-transition: color 2s ease-out;
+          -o-transition: color 2s ease-out;
+          transition: color 2s ease-out;
+          font-size: 20px;
+          margin-left:10px;
+        }
+
+          &:hover i {
+            color:$head-color-dark;
+            animation: arrow .8s infinite;
+            animation-direction: alternate;
+          }
+        }
+      }
+
+    &__wrapper {
+      margin: 20px 0;
+      padding-bottom: 40px;
+
+      
+
+      &:last-child{
+        @include border-section;
+      }
+      
+        &--content {
+          max-width:1180px;
+          margin: 0 auto;
+          @include clearfix;
+
+          @include mq (0, 1200px){
+            margin: 0 20px;
+          }
+         
+          @include mq (0, 768px){
+            padding-bottom: 0;
+            
+          }
+       
+          [class^="col"]:not(:last-child) {
+            margin-right: 40px; 
+
+            @include mq (0, 768px){
+              margin-right: 0;
+            }
+          }
+
+          .col {
+            width: calc((100% - 3 * 40px) / 4);
+              text-align:center;
+              padding:20px 0 20px 0;
+              float:left;
+
+            
+
+              @include mq (0, 768px){
+                width: calc((100% - 40px) / 2);
+
+                &:nth-of-type(odd) {
+                  margin-right: 40px;
+                }
+              }
+
+
+              @include mq (0, 512px){
+                width: 100%;
+
+                &:nth-of-type(odd) {
+                  margin-right: 0px;
+                }
+              }
+              
+              .image {
+                padding: 20px 0 20px 0;
+                border: 1px solid $semi-dark-color-2;
+                cursor: pointer;
+                border-radius: 3px;
+                box-shadow: 0 1.5rem 4rem rgba($semi-dark-color, 0.15);
+                overflow: hidden;
+
+                img {
+                  width:100%;
+
+                  &:hover {
+                    animation: products .8s infinite;
+                    animation-direction: alternate;
+                  }
+                }
+              }
+
+              h2 {
+                margin-top:20px;
+                font-family: $secondary-font;
+                font-size: 20px;
+                color: $tertiary-color;
+              }
+
+              h3 {
+                margin-top:10px;
+                font-family: $secondary-font;
+                font-size: 18px;
+                font-style: italic;
+              }
+          }
+      }
+    }
+  }
+    

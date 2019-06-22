@@ -1,0 +1,26 @@
+.separator {
+    @include center;
+
+    span {
+      &:nth-of-type(1) {
+        @include triangles;
+        border-right: 2px solid $tertiary-color;
+        border-top: transparent;
+      }
+
+      &:nth-of-type(n+2):nth-of-type(-n+3){
+        @include triangles;
+        border-right: 2px solid $tertiary-color;
+        border-top: 2px solid $tertiary-color; 
+      }
+
+      &:nth-of-type(4){
+        @include triangles;
+        border-right: transparent;
+        border-top: 2px solid $tertiary-color;
+      }
+    }
+    @include mq (0, 512px){
+      display: none;
+    }
+}

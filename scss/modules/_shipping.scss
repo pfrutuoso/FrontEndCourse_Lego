@@ -1,0 +1,62 @@
+.shipping {
+    border:1px solid rgba($semi-dark-color-2, .4);
+    margin: 75px auto 75px auto;
+    max-width: 1180px;
+    padding-top: 100px;
+    position: relative;
+
+    @include mq (0, 768px) {
+        padding-top: 0px;
+        margin: 50px auto 75px auto;
+    }
+
+    @include mq (0, 512px) {
+        margin: 0 auto;
+      }
+
+    &:before{
+        content: url('../images/shipping-main-figure.png');
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: auto;
+        right: 50px;
+        margin-top: -195px;
+
+        @include mq (0, 768px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        @include head-title;
+        display: inline-block;
+    }
+
+    p {
+        @include paragraph;
+        @include center;
+        font-style: italic;
+        margin-bottom: 60px;
+    }
+    
+    &__content {
+        padding-top: 40px;
+
+        @include mq (0, 768px) {
+            margin: 0 20px 0 20px;
+        }
+
+        form {
+            height: 100%;
+            padding-bottom:40px;
+            @include clearfix;
+            max-width: 580px;
+            margin: 0 auto;
+            
+            .bil {
+            @include center;
+            }
+        }
+    }
+}

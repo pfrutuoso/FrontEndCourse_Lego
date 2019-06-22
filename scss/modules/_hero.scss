@@ -1,0 +1,137 @@
+.hero {
+  margin:0 auto;
+  @include center;
+  height: 75vh;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  position: relative;
+  margin-bottom:40px;
+  overflow:hidden;
+  width: 100%;
+
+  @include mq (0, 1024px){
+    height: 60vh;
+  }
+
+  @include mq (0, 768px){
+    height: 50vh;
+    margin: 0;
+  }
+
+  &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-color: $primary-color;
+        opacity: .2;
+      }
+
+  &__bg {
+    animation: move-bg 40s linear infinite alternate;
+
+    .bg {
+      background-image: url(../images/back.jpg);
+      background-size: cover;
+      animation: float 6s ease-in-out infinite;
+      position: absolute;
+      height: 80vh;
+      width: 150%;
+
+      @include mq (0, 1024px){
+        height: 70vh;
+      }
+
+      @include mq (0, 768px){
+        height: 60vh;
+      }
+    }
+  }
+
+  &__front {
+    animation: move-front 10s linear infinite alternate-reverse;
+
+    .front {
+      background-image: url(../images/front.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 0;
+      animation: float 5.5s ease-in-out infinite;
+      position: absolute;
+      height: 80vh;
+      width: 100%;
+
+      @include mq (0, 890px){
+        height: 60vh;
+        top: 30px;
+      }
+    }
+  }
+  
+  article{
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    max-width:50%;
+    width: 100%;
+    margin: 0 auto;
+    color: $light-color;
+    z-index:1;
+
+    @include mq (0, 600px){
+      max-width:80%;
+    }
+
+    h1{
+      font-size:50px;
+      margin-bottom:40px;
+      text-transform:uppercase;
+      font-family:$primary-font;
+      position: relative;
+      animation: moveInTop .6s ease-in-out;
+      @include border-heading;
+
+      @include mq (0, 890px){
+        font-size:26px;
+        padding: 5px 0;
+      }
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $tertiary-color;
+        z-index: -1;
+        opacity: .7;
+      }
+    }
+    
+    p {
+      font-size:28px;
+      font-family:$secondary-font;
+      margin-bottom: 40px;
+      font-style: italic;
+      font-weight:300;
+      animation: moveInTop .9s;
+
+        @include mq (0, 890px){
+          font-size:22px;
+          margin-bottom: 30px;
+        }
+
+        @include mq (0, 512px){
+          font-size:18px;
+          margin-bottom: 30px;
+        }
+    }
+  }
+}

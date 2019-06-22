@@ -1,0 +1,162 @@
+label {
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    font-size: 13px;
+}
+
+// NEW INPUT
+select, textarea, input[type=text],
+input[type=email]{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 30px;
+    background-color: $light-color;
+    border: thin solid rgba($semi-dark-color-2 ,0.5);
+    display: inline-block;
+    font-family: $secondary-font;
+    color: $semi-dark-color;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    border-radius:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+// NEW CHECKBOX
+.new-checkbox {
+    position: absolute; // take it out of document flow
+    opacity: 0; // hide it
+  
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+    }
+  
+    & + label:before {
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: $light-color;
+      border: thin solid rgba($semi-dark-color-2 ,0.5);
+    }
+  
+    &:hover + label:before {
+      background: $head-color-light;
+    }
+    
+    &:focus + label:before {
+        -webkit-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+        box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+    }
+
+    &:checked + label:before {
+      background: $head-color-light;
+    }
+
+    &:disabled + label {
+      color: #b8b8b8;
+      cursor: auto;
+    }
+  
+    &:disabled + label:before {
+      box-shadow: none;
+      background: #ddd;
+    }
+
+    &:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: $light-color;
+      width: 2px;
+      height: 2px;
+      box-shadow: 
+        2px 0 0 $light-color,
+        4px 0 0 $light-color,
+        4px -2px 0 $light-color,
+        4px -4px 0 $light-color,
+        4px -6px 0 $light-color,
+        4px -8px 0 $light-color;
+      transform: rotate(45deg);
+    }
+  }
+
+option {
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    font-size: 13px;
+}
+
+input[type=text], input[type=email] {
+  height: 40px;
+    &::placeholder {
+        text-transform: uppercase;
+        font-family: $secondary-font;
+        font-size: 13px;
+    }
+}
+
+select.custom  {
+  height: 40px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, $semi-dark-color-2 50%),
+    linear-gradient(135deg, $semi-dark-color-2 50%, transparent 50%),
+    linear-gradient(to right, $semi-dark-color-2, $semi-dark-color-2);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+
+    &:focus {
+        background-image:
+        linear-gradient(45deg, $head-color-light 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, $head-color-light 50%),
+        linear-gradient(to right, $semi-dark-color-2, $semi-dark-color-2);
+        background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+        background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+        background-repeat: no-repeat;
+        border-color: $head-color-light;
+        outline: 0;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+        box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+    }
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+    border-color: $head-color-light;
+    outline: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+    box-shadow: 0px 0px 5px 0px rgba($head-color-light, .75);
+}
+
+#item_number{
+    width:70px;
+    margin: 0;
+    height: 35px;
+}

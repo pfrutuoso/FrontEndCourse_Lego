@@ -1,0 +1,42 @@
+.contact {
+    margin: 50px 30px;
+
+    @include mq (0, 768px){
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+    
+    &__title {
+        @include head-title;
+        display: inline-block;
+    }
+
+    p{
+        @include paragraph;
+        @include center;
+        margin-bottom: 60px;
+    }
+    
+    &__content {
+        margin: 0 20px 0 20px;
+        font-size: 0;
+        @include border-section;
+        padding-bottom: 70px;
+
+        @include mq (0, 768px){
+            padding-bottom: 0;
+          }
+
+        form {
+            height: 100%;
+            padding-bottom:40px;
+            @include clearfix;
+            max-width: 580px;
+            margin: 0 auto;
+            
+            .submit {
+            @include center;
+            }
+        }
+    }
+}

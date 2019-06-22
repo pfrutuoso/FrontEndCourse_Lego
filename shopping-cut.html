@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+	<meta charset="utf-8">
+	<title>Lego</title>
+	<!--Generic meta-->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Paulo Frutuoso" />
+	<meta name="description" content="Loja Lego no âmbito do curso de Frontend Development na EDIT" />
+	<meta name="keywords" content="loja, lego, frontend, html, css, javascript" />
+	<meta name="robots" content="">
+	<!--extra meta-->
+	<meta name="google" content="notranslate" />
+	<!--fb meta-->
+	<meta property="og:title" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:locale" content="pt_PT" />
+	<meta property="og:type" content="website" />
+	<!--twitter meta-->
+	<meta name="twitter:card" content="">
+	<meta name="twitter:url" content="">
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="">
+	<!--Add to home screen icon-->
+	<link href="images/system/apple-touch-icon.png" rel="apple-touch-icon" />
+	<link href="images/system/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+	<link href="images/system/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+	<link href="images/system/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+	<link href="images/system/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+	<!--favicon-->
+	<link rel="shortcut icon" href="images/system/favicon.ico" />
+	<link rel="icon" type="image/ico" href="images/system/favicon.ico" />
+	<!--Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Niramit:300,400,700" rel="stylesheet" />
+	<!--Icons-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+	<!--Swiper slider-->
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<!--css-->
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<!--GA-->
+
+<script>
+	(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<body>
+	<!--CONTAINER-->
+	<div class="container">
+
+		<!--HEADER-->
+		<header>
+			<nav>
+				<div class="nav-left">
+					<div class="main_logo"><a href="index.html"><img src="images/main_logo.png" title="Lego shop" alt="Lego shop"></a>
+					</div>
+					<input type="checkbox" id="chk">
+					<label for="chk" class="show-menu-btn">
+						<i class="fas fa-bars"></i>
+					</label>
+					<ul class="menu-left">
+						<li><a href="#">Login</a></li>
+						<li><a href="shopping-cut.html">Basket</a></li>
+						<li><a href="details.html">New</a></li>
+						<li><a href="category.html">Themes</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+
+						<label for="chk" class="hide-menu-btn">
+							<i class="fas fa-times"></i>
+						</label>
+					</ul>
+				</div>
+				<div class="nav-hello"></div>
+				<div class="nav-right">
+					<ul class="menu-right">
+						<li><a href="#"><img src="images/user.svg" alt="User" title="User"
+									alt="User image"><span>Login</span></a></li>
+						<li><a href="shopping-cut.html"><img src="images/basket.svg" alt="Basket" title="Basket"
+									alt="Basket image"><span>Basket</span></a></li>
+					</ul>
+					<form class="main_search">
+						<label>
+							<i class="fas fa-search"></i>
+							<input type="search" name="search" placeholder="Type something...">
+						</label>
+					</form>
+				</div>
+			</nav>
+		</header>
+		<!--END HEADER-->
+		<!--SHOPPING BAG CUT-->
+		<section class="shopping-bag">
+			<h1 class="shopping-bag__title">Your Shopping Bag</h1>
+			<p>Items reserved for limited time only</p>
+			<div class="shopping-bag__content">
+				<div class="table">
+					<!--ROW-->
+					<div class="row header">
+						<div>5 Item(s)</div>
+						<div>Description</div>
+						<div>Price</div>
+						<div>Quantity</div>
+						<div>Total</div>
+						<div>Delete</div>
+					</div>
+					<!--END ROW-->
+					<!--ROW-->
+					<div class="row">
+						<div class="product"><img src="images/mosaic-classic.jpg" title="Box Set Classic"
+								alt="Box Set Classic"></div>
+						<div>
+							<p>Box Classic Set</p>
+							<small>Ref:1234</small>
+						</div>
+						<div class="price">29,99€</div>
+						<div>
+							<select id="item_number" class="custom">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="price">29,99€</div>
+						<div><a href=""><i title="Delete item" class="fas fa-times"></i><span class="delete-item">Delete
+									item</span></a></div>
+
+					</div>
+					<!--END ROW-->
+					<!--ROW-->
+					<div class="row">
+						<div class="product"><img src="images/mosaic-juniors.jpg" title="Box Set Juniors"
+								alt="Box Set Juniors"></div>
+						<div>
+							<p class="name">Box Classic Junior</p>
+							<small>Ref:1234</small>
+						</div>
+						<div class="price">39,99€</div>
+						<div>
+							<select id="item_number" class="custom">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="price">39,99€</div>
+						<div><a href=""><i title="Delete item" class="fas fa-times"></i><span class="delete-item">Delete
+									item</span></a></div>
+					</div>
+					<!--END ROW-->
+					<!--ROW-->
+					<div class="row">
+						<div class="product"><img src="images/cat-figure-fred.jpg" title="Minifigure Freddy Mercury"
+								alt="Minifigure Freddy Mercury"></div>
+						<div>
+							<p>Freddy Mercury Minifigure </p>
+							<small>Ref:1234</small>
+						</div>
+						<div class="price">9,99€</div>
+						<div>
+							<select id="item_number" class="custom">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="price">9,99€</div>
+						<div><a href=""><i title="Delete item" class="fas fa-times"></i><span class="delete-item">Delete
+									item</span></a>
+						</div>
+					</div>
+					<!--END ROW-->
+					<!--ROW-->
+					<div class="row">
+						<div class="product"><img src="images/mosaic-mine.jpg" title="Box Set Minecraft"
+								alt="Box Set Minecraft"></div>
+						<div>
+							<p>Box Classic Minecraft</p>
+							<small>Ref:1234</small>
+						</div>
+						<div class="price">49,99€</div>
+						<div>
+							<select id="item_number" class="custom">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="price">49,99€</div>
+						<div><a href=""><i title="Delete item" class="fas fa-times"></i><span class="delete-item">Delete
+									item</span></a></div>
+
+					</div>
+					<!--END ROW-->
+					<!--ROW-->
+					<div class="row">
+						<div class="product"><img src="images/mosaic-duplo.jpg" title="Box Set Duplo" alt="Box Set Duplo">
+						</div>
+						<div>
+							<p>Box Classic Duplo</p>
+							<small>Ref:1234</small>
+						</div>
+						<div class="price">19,99€</div>
+						<div>
+							<select id="item_number" class="custom">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="price">19,99€</div>
+						<div><a href=""><i title="Delete item" class="fas fa-times"></i><span class="delete-item">Delete
+									item</span></a>
+						</div>
+
+					</div>
+					<!--END ROW-->
+					<div class="row price_total">
+						<div>Subtotal</div>
+						<div>123,99€</div>
+					</div>
+				</div>
+				<div class="shopping-bag__content--buttons">
+					<a title="Order Now" href="shopping.html" class="btn btn__primary">Order Now</a>
+					<a title="Continue Shopping" href="category.html" class="btn btn__link">Continue Shopping</a>
+				</div>
+			</div>
+	</div>
+	</section>
+	<!--END SHOPPING BAG-->
+
+	<!--FOOTER-->
+	<footer>
+		<nav class="footer">
+			<div class="footer__col">
+				<h3>Collection</h3>
+				<ul>
+					<li><a href="details.html">New</a></li>
+					<li><a href="category.html">Themes</a></li>
+					<li><a href="category-figures.html">Figures</a></li>
+					<li><a href="error404.html">Coming Soon</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3>Site</h3>
+				<ul>
+					<li><a href="error404.html">Terms of Service</a></li>
+					<li><a href="error404.html">Privacy Policy</a></li>
+					<li><a href="error404.html">Copyright Policy</a></li>
+					<li><a href="error404.html">Press Kit</a></li>
+					<li><a href="error404.html">Support</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3>Shop</h3>
+				<ul>
+					<li><a href="about.html">About us</a></li>
+					<li><a href="error404.html">Shipping Metods</a></li>
+					<li><a href="error404.html">Career</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3>Social</h3>
+				<p>Lego shop is made with love in Lisbon by <a href="http://www.paulofrutuoso.pt/design"
+						target="_blank">Paulo Frutuoso</a> 2019 © All rights reserved. </p>
+				<ul class="footer__col--social">
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"></a><i class="fab fa-facebook"></i></a></li>
+					<li><a href="#"></a><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</footer>
+	<!--END FOOTER-->
+
+	</div>
+	<!--END CONTAINER-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+</body>
+</html>

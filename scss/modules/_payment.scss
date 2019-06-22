@@ -1,0 +1,105 @@
+.payment{
+    border:1px solid rgba($semi-dark-color-2, .4);
+    margin: 75px auto 75px auto;
+    max-width: 1180px;
+    padding: 100px 0 100px 0;
+    position: relative;
+    font-family: $primary-font;
+
+    @include mq (0, 768px) {
+        padding: 0 0 100px 0;
+        margin: 0 auto;
+
+        @include mq (0, 512px) {
+            padding-bottom: 40px;
+        }
+    }
+
+    &:before{
+        content: url('../images/payment-main-figure.png');
+        display: block;
+        position: absolute;
+        width: 100px;
+        height: auto;
+        right: 50px;
+        margin-top: -195px;
+
+        @include mq (0, 768px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        @include head-title;
+        display: inline-block;
+    }
+
+    p {
+        @include paragraph;
+        @include center;
+        font-style: italic;
+        margin-bottom: 60px;
+    }
+    
+    &__content {
+        padding-top: 40px;
+
+        @include mq (0, 768px) {
+            margin: 0 20px 0 20px;
+        }
+
+        @include mq (0, 512px) {
+            padding-top: 0;
+        }
+
+        .count {
+            @include clearfix;
+            margin: 0 auto;
+            display: table;
+            margin-bottom: 90px;
+
+            @include mq (0, 512px) {
+                margin-bottom: 40px;
+            }
+            
+            ul {
+                float: left;
+                font-size: 18px;
+                line-height: 22px;
+
+                @include mq (0, 768px){
+                    font-size: 16px;
+                  }
+
+                &:not(:last-child){
+                margin-right: 20px;
+                text-align: right;
+                }
+
+                &:last-child{
+                    font-style: italic;
+                    float: left;
+                }
+
+                li {
+                    &:last-child{
+                        color: $tertiary-color;
+                    }
+                }
+            }
+        }
+        .method {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        &--button {
+            @include center;
+            margin-top: 40px;
+
+            @include mq (0, 512px) {
+                margin-top: 0px;
+            }
+        }
+    }
+}

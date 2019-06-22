@@ -1,0 +1,159 @@
+.btn {
+  &:link,
+  &:visited {
+    font-family: $primary-font;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    position:relative;
+
+    @include mq (0, 768px){
+      font-size:14px;
+      line-height: 26px;
+    }
+
+    @include mq (0, 512px){
+      font-size:12px;
+      line-height: 22px;
+    }
+  }
+
+    &__primary,
+    &__lg {
+      padding: 10px 20px;
+      border: 1px solid rgba($primary-color, 0.4);
+      color: $light-color;
+      transition: color 300ms;
+      position: relative;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -moz-osx-font-smoothing: grayscale;
+
+      &:before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background:rgba($primary-color, 0.4);
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition: 300ms ease-out;
+        transition: 300ms ease-out;
+      }
+
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        }
+      }
+
+      &__primary {
+        background-color: $tertiary-color;
+      }
+
+      &__lg {
+        background-color: $head-color-dark;
+        text-align: center;
+        width: 100%;
+        margin: 20px auto;
+
+        @include mq (0, 768px){
+          margin:0;
+          border: 1px solid $light-color;
+        }
+      }
+
+    &__animated {
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 1px solid $light-color;
+      color: $light-color;
+      transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      -webkit-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      -moz-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      -ms-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      -o-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 140%;
+          height: 100%;
+          left: -20%;
+          z-index: -1000;
+          transition: all ease-in-out 0.5s;
+          background-repeat: no-repeat;
+        }
+        
+        &:before {
+          top: -75%;
+          @include btn-animated-before;
+          background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+        }
+        
+        &:after{
+          bottom: -75%;
+          @include btn-animated-after;
+          background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+        }
+       
+        &:hover {
+          background-color: $secondary-color;
+        }
+        
+        &.animate {
+          &:before {
+            display: block;
+            animation: topBubbles ease-in-out 0.75s forwards;
+          }
+
+          &:after {
+            display: block;
+            animation: bottomBubbles ease-in-out 0.75s forwards;
+
+          }
+          &:active {
+            animation: gradient 100ms;
+            background: $secondary-color-semi-dark;
+            color: $light-color;
+          }
+        }
+    }
+
+    &__link {
+      color: $primary-color;
+      text-decoration: underline;
+      padding: 0;
+
+      &:hover,
+      &:active{
+        color: $tertiary-color;
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
